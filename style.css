@@ -17,9 +17,9 @@
   --paper-dark: #1A1A1A;
   --paper-dark-soft: #2A2826;
 
-  /* Типографика — расширенный fallback, если Fraunces не загрузится (например, на iOS) */
-  --display: "Fraunces", "Iowan Old Style", "Cormorant Garamond", "Hoefler Text", "Georgia", "Times New Roman", serif;
-  --body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Типографика — дерзкий уличный лук: рубленый плотный гротеск */
+  --display: "Unbounded", "Arial Black", "Helvetica Neue", system-ui, sans-serif;
+  --body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Ритм */
   --section-px: clamp(20px, 5vw, 96px);
@@ -120,9 +120,9 @@ button { font: inherit; cursor: pointer; }
   position: absolute; inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(15,15,15,.62) 0%,
-    rgba(15,15,15,.42) 35%,
-    rgba(15,15,15,.95) 100%
+    rgba(15,15,15,.78) 0%,
+    rgba(15,15,15,.52) 30%,
+    rgba(15,15,15,.92) 100%
   );
 }
 .hero__inner {
@@ -131,33 +131,60 @@ button { font: inherit; cursor: pointer; }
   width: 100%;
 }
 .hero__est {
-  display: inline-block;
-  font-size: 12px; letter-spacing: .3em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--body);
+  font-size: 12px; font-weight: 700;
+  letter-spacing: .3em; text-transform: uppercase;
   color: var(--accent);
-  padding-bottom: 8px;
-  border-bottom: 1px solid color-mix(in srgb, var(--accent) 60%, transparent);
-  margin-bottom: 24px;
+  padding: 6px 14px 6px 0;
+  margin-bottom: 22px;
   animation: fadeUp .8s .1s both;
+}
+.hero__est::before {
+  content: "";
+  display: inline-block;
+  width: 28px; height: 3px;
+  background: var(--accent);
 }
 .hero__title {
   font-family: var(--display);
-  font-weight: 500;
-  font-size: clamp(56px, 11vw, 168px);
-  line-height: .92;
-  letter-spacing: -.035em;
-  margin: 0 0 18px;
+  font-weight: 900;
+  font-size: clamp(64px, 13vw, 200px);
+  line-height: .88;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  margin: 0 0 16px;
   animation: fadeUp .9s .25s both;
 }
-.hero__title-name { font-style: italic; }
+.hero__title-name { font-style: normal; }
+/* Дерзкая косая оранжевая полоса под названием */
+.hero__title-name {
+  position: relative;
+  display: inline-block;
+  padding: 0 .04em;
+}
+.hero__title-name::after {
+  content: "";
+  position: absolute;
+  left: -4%; right: -4%;
+  bottom: 12%;
+  height: .14em;
+  background: var(--accent);
+  transform: skewY(-3deg);
+  z-index: -1;
+  opacity: .85;
+}
 .hero__tagline {
-  font-family: var(--display);
-  font-size: clamp(22px, 2.4vw, 32px);
-  font-weight: 400;
-  font-style: italic;
+  font-family: var(--body);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: .12em;
   margin: 0 0 28px;
-  line-height: 1.25;
+  line-height: 1.3;
   max-width: 660px;
-  color: color-mix(in srgb, var(--paper) 90%, transparent);
+  color: var(--paper);
   animation: fadeUp .9s .4s both;
 }
 .hero__trust {
@@ -174,9 +201,9 @@ button { font: inherit; cursor: pointer; }
   display: inline-flex; align-items: center; gap: 7px;
   color: var(--paper);
 }
-.hero__trust-star { color: #F5C76E; font-size: 15px; line-height: 1; }
+.hero__trust-star { color: var(--accent); font-size: 15px; line-height: 1; }
 .hero__trust-rating strong {
-  font-family: var(--display); font-weight: 500;
+  font-family: var(--display); font-weight: 700;
   font-size: 16px; letter-spacing: -.01em;
 }
 .hero__trust-sep {
@@ -197,11 +224,14 @@ button { font: inherit; cursor: pointer; }
   font-style: normal;
 }
 .hero__offer {
-  font-size: 16px;
-  max-width: 540px;
-  margin: 0 0 36px;
+  font-family: var(--body);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.45;
+  max-width: 560px;
+  margin: 0 0 32px;
   white-space: pre-line;
-  color: color-mix(in srgb, var(--paper) 78%, transparent);
+  color: color-mix(in srgb, var(--paper) 88%, transparent);
   animation: fadeUp .9s .55s both;
 }
 .hero__cta-row {
@@ -240,29 +270,34 @@ button { font: inherit; cursor: pointer; }
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-flex; align-items: center; gap: 10px;
-  padding: 16px 26px;
-  border-radius: 999px;
-  font-size: 15px; font-weight: 500;
-  letter-spacing: .01em;
-  transition: transform .15s, background .15s, color .15s, border-color .15s;
+  padding: 17px 28px;
+  border-radius: 4px;
+  font-family: var(--body);
+  font-size: 14px; font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  transition: transform .15s, background .15s, color .15s, border-color .15s, box-shadow .15s;
 }
 .btn:active { transform: translateY(1px); }
 .btn--solid {
-  background: var(--accent); color: var(--paper);
-  border: 1px solid var(--accent);
+  background: var(--accent); color: #fff;
+  border: 2px solid var(--accent);
+  box-shadow: 4px 4px 0 var(--ink);
 }
-.btn--solid:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.btn--solid:hover {
+  background: var(--accent-dark); border-color: var(--accent-dark);
+  transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink);
+}
 .btn--solid .btn__phone {
   font-family: var(--display); font-weight: 500; font-size: 16px;
   opacity: .85;
 }
 .btn--ghost {
   background: transparent; color: var(--paper);
-  border: 1px solid color-mix(in srgb, var(--paper) 50%, transparent);
+  border: 2px solid var(--paper);
 }
 .btn--ghost:hover {
-  border-color: var(--paper);
-  background: color-mix(in srgb, var(--paper) 10%, transparent);
+  background: var(--paper); color: var(--ink);
 }
 .btn--ghost-dark {
   background: transparent; color: var(--ink);
