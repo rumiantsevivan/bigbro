@@ -58,17 +58,17 @@ window.SITE_CONFIG = {
   // === Реальные отзывы с 2ГИС ===
   reviews: [
     {
-      author: "Гость от Netmonet",
-      text: "Идеальная пропиской. Уважительное отношение, всегда помогут — если что-то с волосами. Рекомендую!",
+      author: "Алексей Букшан",
+      text: "Каждый раз когда прихожу — не чувствую, что я в гостях. Как у себя дома: чистота, хорошая атмосфера, нормальный приём — мужская территория. Большое спасибо Денису, как всегда всё на высоте.",
       source: "2ГИС",
     },
     {
-      author: "Гость от Netmonet",
-      text: "Top Barber et Coiffeur. Mon fils a un excellent rapport avec son barber — ça vaut le coup.",
+      author: "Pierre L.",
+      text: "Top Barber et Coiffeur! Mon fils a un excellent rapport avec son barber — ça vaut le coup.",
       source: "2ГИС",
     },
     {
-      author: "Гость от Netmonet",
+      author: "Гость",
       text: "С Новым годом! Спасибо за прекрасную работу и атмосферу. Будем приходить ещё.",
       source: "2ГИС",
     },
