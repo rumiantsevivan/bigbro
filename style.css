@@ -605,9 +605,9 @@ button { font: inherit; cursor: pointer; }
   font-style: italic;
   font-size: 92px;
   color: var(--accent);
-  line-height: .5;
+  line-height: 1;
   position: absolute;
-  top: 28px; left: 22px;
+  top: 8px; left: 22px;
   opacity: .85;
 }
 .review__text {
