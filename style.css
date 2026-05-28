@@ -596,18 +596,18 @@ button { font: inherit; cursor: pointer; }
 }
 .review {
   position: relative;
-  padding: 32px 28px 28px;
+  padding: 80px 28px 28px;
   background: var(--paper-soft);
   border-radius: 4px;
 }
 .review__mark {
   font-family: var(--display);
   font-style: italic;
-  font-size: 92px;
+  font-size: 72px;
   color: var(--accent);
   line-height: 1;
   position: absolute;
-  top: 8px; left: 22px;
+  top: 24px; left: 22px;
   opacity: .85;
 }
 .review__text {
